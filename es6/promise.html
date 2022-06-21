@@ -56,6 +56,8 @@ class UncaughtPromiseError extends Error{
 }
 
 
+new Promise((resolve,reject)=>{})
+
 
 // let is_shop_open=false
 
@@ -163,14 +165,14 @@ class UncaughtPromiseError extends Error{
 
 
 
-function sleep(amount){
-    return new Promise((resolve,reject)=>{
-        if(amount<300){
-            return reject('too fast')
-        }
-        setTimeout(()=>resolve(`slept for ${amount}`),amount)
-    })
-}
+// function sleep(amount){
+//     return new Promise((resolve,reject)=>{
+//         if(amount<300){
+//             return reject('too fast')
+//         }
+//         setTimeout(()=>resolve(`slept for ${amount}`),amount)
+//     })
+// }
 
 // sleep(500)
 // .then(result=>{
@@ -181,11 +183,11 @@ function sleep(amount){
 //     console.log(result)
 // })
 
-async function go(){
-    await sleep(1000)
-    const response=await sleep(2000)
-    console.log(response)
-}
+// async function go(){
+//     await sleep(1000)
+//     const response=await sleep(2000)
+//     console.log(response)
+// }
 
-go()
+// go()
 </script>
