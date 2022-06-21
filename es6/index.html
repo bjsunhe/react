@@ -1,0 +1,11 @@
+<script>
+const myPromise=new Promise((resolve,reject)=>{
+    const rand=Math.floor(Math.random())
+    if(rand===0){
+        resolve()
+    }else{
+        reject()
+    }
+})
+myPromise.then(()=>console.log('success'))
+</script>

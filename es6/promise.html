@@ -1,0 +1,191 @@
+<script>
+const STATE={
+    FULFILLED:'fulfilled',
+    REJECTED:'rejected',
+    PENDING:'pending'
+}
+
+
+class MyPromise{
+    constructor(){
+
+    }
+
+    #runCallbacks(){
+
+    }
+
+    #onSuccess(){
+
+    }
+    #onFail(){
+
+    }
+    then(){
+
+    }
+    catch(){
+
+    }
+    finally(){
+
+    }
+    static resolve(){
+
+    }
+    static reject(){
+
+    }
+    static all(){
+
+    }
+    static allSettled(){
+
+    }
+    static race(){
+
+    }
+    static any(){
+
+    }
+
+}
+
+class UncaughtPromiseError extends Error{
+
+}
+
+
+
+// let is_shop_open=false
+
+
+// let order=(time,work)=>{
+//     return new Promise((resolve,reject)=>{
+//         if(is_shop_open){
+//             setTimeout(()=>{
+//               resolve(work())
+//             },time)
+            
+//         }else{
+//             reject(console.log('shop is closed'))
+//         }
+//     })
+// }
+
+
+
+// order(1000,()=>console.log('apple was selected'))
+// .then(()=>order(1000,()=>console.log('production has started')))
+// .then(()=>order(1000,()=>console.log('fruit was chopped')))
+// .then(()=>order(1000,()=>console.log('choclate was added')))
+// .catch(()=> console.log('customer left'))
+// .finally(()=>console.log('day end'))
+
+
+
+// function time(ms){
+//     return new Promise((resolve,reject)=>{
+//         if(is_shop_open){
+//             setTimeout(resolve,ms)
+//         }else{
+//             reject(console.log('shop is closed'))
+//         }
+//     })
+// }
+
+// async function kitchen(){
+//     try{
+//         await time(1000)
+//         console.log('start')
+
+//         await time(1000)
+//         console.log('add')
+//     }
+//     catch(error){
+//         console.log(error)
+//     }
+//     finally{
+//         console.log('day end')
+//     }
+// }
+
+// kitchen()
+
+
+
+// const posts=[
+//     {title:'one',body:'post one'},
+//     {title:'two',body:'post two'}
+// ]
+
+// function getPosts(){
+//     setTimeout(()=>{
+//         let output=''
+//         posts.forEach((post,index)=>output+=`<li>${post.title}</li>`)
+//         document.body.innerHTML=output
+//     },1000)
+// }
+
+
+
+// function createPost(post){
+//     return new Promise((resolve,reject)=>{
+//         setTimeout(()=>{
+//             const error=false
+//             if(!error){
+//                 posts.push(post)
+//                 resolve('resolved')
+//             }else{
+//                 reject('error: wrong')
+//             }
+//         },1000)
+//     })
+// }
+
+
+// async function init(){
+//     await createPost({title:'three',body:'three post'})
+//     getPosts()
+// }
+// init()
+// createPost({title:'three',body:'post three'})
+// .then(getPosts)
+// .catch(error=>console.log(error))
+
+// const promise1=Promise.resolve('hi')
+// const promise2=10
+// const promise3=new Promise((resolve,reject)=>{
+//     setTimeout(resolve,2000,'good bye')
+// })
+
+// Promise.all([promise1,promise2,promise3]).then(values=>console.log(values))
+
+
+
+function sleep(amount){
+    return new Promise((resolve,reject)=>{
+        if(amount<300){
+            return reject('too fast')
+        }
+        setTimeout(()=>resolve(`slept for ${amount}`),amount)
+    })
+}
+
+// sleep(500)
+// .then(result=>{
+//     console.log(result)
+//     return sleep(1000)
+// })
+// .then(result=>{
+//     console.log(result)
+// })
+
+async function go(){
+    await sleep(1000)
+    const response=await sleep(2000)
+    console.log(response)
+}
+
+go()
+</script>
