@@ -1,11 +1,98 @@
 <script>
-const myPromise=new Promise((resolve,reject)=>{
-    const rand=Math.floor(Math.random())
-    if(rand===0){
-        resolve()
-    }else{
-        reject()
+// const myPromise=new Promise((resolve,reject)=>{
+//     const rand=Math.floor(Math.random())
+//     if(rand===0){
+//         resolve()
+//     }else{
+//         reject()
+//     }
+// })
+// myPromise.then(()=>console.log('success'))
+
+
+
+
+// Function.prototype.before=function(beforeFn){
+//     console.log(beforeFn,this)
+//     let that=this
+//     return function(){
+//         beforeFn()
+//         that()
+//     }
+// }
+
+
+
+// function coreFn(a,b,c){
+//     console.log('before core',a,b,c)
+
+//     console.log('core')
+// }
+
+// Function.prototype.before=function(beforeFn){
+
+//     return (...args)=>{
+//         console.log(args)
+//         beforeFn()
+//         this(...args)
+//     }
+// }
+
+// coreFn.before(()=>{
+//     console.log('before')
+// })(1,2,3)
+
+// function isType(type,val){
+//     return Object.prototype.toString.call(val) === `[object ${type}]`
+// }
+
+// console.log(isType('Number',123))
+
+
+function isType(type){
+    return function(val){
+        return Object.prototype.toString.call(val) === `[object ${type}]`
     }
-})
-myPromise.then(()=>console.log('success'))
+}
+
+// const isString=isType('String')
+// const isNumber = isType('Number')
+
+// console.log(isString('123'))
+// console.log(isNumber('123'))
+// console.log(isString(123))
+// console.log(isNumber(123))
+
+
+// function sum(a,b,c,d){
+//     return a+b+c+d
+// }
+function curring(fn){
+    let args=[]
+    const inner=(arr=[])=>{
+        args.push(...arr)
+        return args.length>=fn.length?fn(...args):(...args)=>inner(args)
+    }
+    return inner()
+}
+
+// const fn=curring(sum)
+
+// const fn1=fn(1)
+// const fn2=fn1(2,3)
+// const result=fn2(4)
+
+// console.log(result)
+
+
+
+const isString=curring(isType)('String')
+const isNumber = curring(isType)('Number')
+
+console.log(isString('123'))
+console.log(isNumber('123'))
+console.log(isString(123))
+console.log(isNumber(123))
+
+
 </script>
