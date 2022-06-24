@@ -1,0 +1,41 @@
+<script>
+function* simple(){
+    yield 1
+    yield 2
+    yield 3
+    yield 4
+    yield 5
+}
+
+
+function* generateId(){
+    let id=1
+    while(true){
+        yield id
+        id++
+    }
+}
+
+
+function* generator(array){
+    for(let i=0;i<array.length;i++){
+        yield array[i]
+    }
+}
+
+
+
+
+function* newGenerator(){
+    let id=1
+    while(true){
+        const increment= yield id
+        if(increment!==undefined){
+            id+=increment
+        }else{
+            id++
+        }
+    }
+}
+
+</script>

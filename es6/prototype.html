@@ -1,0 +1,33 @@
+<script>
+// function Person(){
+
+// }
+
+// function Fun(){
+
+// }
+
+// var fun=new Fun()
+
+
+
+function Person(name){
+    this.name=name
+}
+
+// Person.prototype.getName=function(){
+//     console.log(this.name)
+// }
+
+
+Person.prototype={
+    getName:function(){
+        console.log(this.name)
+    }
+}
+
+let person=new Person('hi')
+
+
+
+</script>
