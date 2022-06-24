@@ -11,7 +11,7 @@
             "skipFiles": [
                 "<node_internals>/**"
             ],
-            "program": "${workspaceFolder}/es6"
+            "program": "${workspaceFolder}/es6/promise.js"
         }
     ]
 }
