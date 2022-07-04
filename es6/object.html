@@ -1,4 +1,4 @@
-<script>
+<!-- <script>
 function SuperType(){
     this.property=true
 
@@ -21,7 +21,108 @@ SubType.prototype.getSubValue=function(){
     return this.subproperty
 }
 
+SubType.prototype.getSuperValue=function(){
+    return false
+}
+
 
 
 let instance=new SubType()
-</script>
+</script> -->
+
+
+<!-- <script>
+function SuperType(){
+    this.colors=['red','blue','green']
+}
+
+function SubType(){
+
+}
+
+SubType.prototype=new SuperType()
+
+
+let instance1=new SubType()
+instance1.colors.push('black')
+
+let instance2=new SubType()
+
+</script> -->
+
+
+
+<!-- <script>
+
+function SuperType(){
+    this.colors=['red','blue','green']
+}
+
+function SubType(){
+    SuperType.call(this)
+}
+
+let instance1=new SubType()
+instance1.colors.push('black')
+
+let instance2=new SubType()
+
+
+
+
+
+
+</script> -->
+
+
+
+<!-- <script>
+function SuperType(name){
+    this.name=name
+}
+
+function SubType(){
+    SuperType.call(this,'nicholas')
+    this.age=29
+}
+
+let instance=new SubType()
+
+
+
+</script> -->
+
+
+<!-- <script>
+function SuperType(name){
+    this.name=name
+    this.colors=['red','blue','green']
+}
+
+
+SuperType.prototype.sayName=function(){
+    console.log(this.name)
+}
+
+function SubType(name,age){
+    SuperType.call(this,name)
+    this.age=age
+}
+
+
+SubType.prototype=new SuperType()
+
+SubType.prototype.sayAge=function(){
+    console.log(this.age)
+}
+
+
+
+let instance1=new SubType('nicholas',29)
+instance1.colors.push('black')
+
+
+let instance2=new SubType('greg',27)
+
+
+</script> -->
