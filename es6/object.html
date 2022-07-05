@@ -126,3 +126,27 @@ let instance2=new SubType('greg',27)
 
 
 </script> -->
+
+
+
+<script>
+function object(o){
+    function F(){}
+    F.prototype=o
+    return new F()
+}
+let person={
+    name:'nicholas',
+    friends:['shel','cour','van']
+}
+let anotherPerson=object(person)
+anotherPerson.name='greg'
+anotherPerson.friends.push('rob')
+
+let yetAnotherPerson=object(person)
+yetAnotherPerson.name='linda'
+yetAnotherPerson.friends.push('barbie')
+
+</script>
+
+
