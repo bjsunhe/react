@@ -1,14 +1,14 @@
-// function currying(fn,arr=[]){
+function currying(fn,arr=[]){
     
-//     return function(...args){
-//         arr=[...arr,...args]
-//         if(arr.length<fn.length){
-//             return currying(fn,arr)
-//         }else{
-//             return fn(...arr)
-//         }
-//     }
-// }
+    return function(...args){
+        arr=[...arr,...args]
+        if(arr.length<fn.length){
+            return currying(fn,arr)
+        }else{
+            return fn(...arr)
+        }
+    }
+}
 
 
 function currying(fn){
